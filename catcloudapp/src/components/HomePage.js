@@ -1,17 +1,24 @@
-// src/components/HomePage.js
-import React from 'react';
-import { useAuth } from '../contexts/AuthContext';
+/**
+ * @file HomePage.js
+ * @description This file contains the HomePage component, which displays the home page of the application.
+ */
+
+import React from "react";
+import Navbar from "./Navbar";
+import MusicPlayer from "./MusicPlayer";
+import MainPage from "./MainPage";
+import "../css/HomePage.css";
 
 const HomePage = () => {
-    const { currentUser, logout } = useAuth();
-
-    return (
-        <div>
-            <h1>Home Page</h1>
-            <h2>Welcome, {currentUser.displayName}!</h2>
-            <button onClick={logout}>Log Out</button>
-        </div>
-    );
-}
+  return (
+    <div className="home-page">
+      <Navbar />
+      <div className="main-page">
+        <MainPage />
+      </div>
+      <MusicPlayer />
+    </div>
+  );
+};
 
 export default HomePage;
